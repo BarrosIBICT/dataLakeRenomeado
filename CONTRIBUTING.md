@@ -1,115 +1,115 @@
 
-# Contributing to This Python Project
+# Contribuindo para Este Projeto Python
 
-Thank you for considering contributing to this project! We welcome all contributions, including bug reports, feature requests, documentation improvements, and code contributions.
+Obrigado por considerar contribuir com este projeto! Todas as contribuições são bem-vindas, incluindo relatórios de bugs, solicitações de novas funcionalidades, melhorias na documentação e contribuições de código.
 
-## Table of Contents
+## Tabela de Conteúdos
 
-- [Getting Started](#getting-started)
-- [Code of Conduct](#code-of-conduct)
-- [How to Contribute](#how-to-contribute)
-- [Development Guidelines](#development-guidelines)
-- [Branching Strategy](#branching-strategy)
-- [Commit Message Guidelines](#commit-message-guidelines)
-- [Pull Request Process](#pull-request-process)
-- [Coding Standards](#coding-standards)
-- [Testing](#testing)
-- [CI/CD via GitHub Actions](#cicd-via-github-actions)
+- [Primeiros Passos](#primeiros-passos)
+- [Código de Conduta](#código-de-conduta)
+- [Como Contribuir](#como-contribuir)
+- [Diretrizes de Desenvolvimento](#diretrizes-de-desenvolvimento)
+- [Estratégia de Branches](#estratégia-de-branches)
+- [Padrões de Mensagens de Commit](#padrões-de-mensagens-de-commit)
+- [Processo de Pull Request](#processo-de-pull-request)
+- [Padrões de Codificação](#padrões-de-codificação)
+- [Testes](#testes)
+- [CI/CD com GitHub Actions](#cicd-com-github-actions)
 
 ---
 
-## Getting Started
+## Primeiros Passos
 
-1. Fork the repository and clone it to your local machine.
-2. Set up a virtual environment:
+1. Faça um fork do repositório e clone-o em sua máquina local.
+2. Configure um ambiente virtual:
 
 ```bash
 python -m venv venv
-source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+source venv/bin/activate  # No Windows use `venv\Scripts\activate`
 ```
 
-3. Install dependencies:
+3. Instale as dependências:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Code of Conduct
+## Código de Conduta
 
-Please read and follow our [Code of Conduct](CODE_OF_CONDUCT.md) to keep the community respectful and inclusive.
+Leia e siga nosso [Código de Conduta](CODE_OF_CONDUCT.md) para manter a comunidade respeitosa e inclusiva.
 
-## How to Contribute
+## Como Contribuir
 
-- **Bug Reports:** Use GitHub Issues to report bugs. Please include steps to reproduce, expected behavior, and actual behavior.
-- **Feature Requests:** Open a GitHub Issue or Discussion to propose a new feature.
-- **Code Contributions:** Follow the process below to submit a pull request.
+- **Relatórios de Bugs:** Use o GitHub Issues para reportar problemas. Inclua passos para reproduzir, comportamento esperado e comportamento observado.
+- **Solicitações de Funcionalidades:** Abra uma Issue ou Discussão no GitHub para propor novas funcionalidades.
+- **Contribuições de Código:** Siga o processo descrito abaixo para enviar um pull request.
 
-## Development Guidelines
+## Diretrizes de Desenvolvimento
 
-- Ensure your code follows [PEP8](https://pep8.org/) using `flake8`.
-- Use `black` for code formatting.
-- All new code should include unit tests.
-- Write docstrings following [PEP 257](https://www.python.org/dev/peps/pep-0257/).
-- Avoid committing directly to `main`.
+- Siga o padrão [PEP8](https://pep8.org/) usando `flake8`.
+- Use o `black` para formatar o código automaticamente.
+- Todo novo código deve incluir testes unitários.
+- Escreva docstrings seguindo o [PEP 257](https://www.python.org/dev/peps/pep-0257/).
+- Evite commits diretamente na branch `main`.
 
-## Branching Strategy
+## Estratégia de Branches
 
-- `main`: Production-ready, stable code.
-- `dev`: Development branch for new features and bug fixes.
-- `feature/<name>`: Feature branches off `dev`.
-- `bugfix/<name>`: Bug fix branches off `dev`.
+- `main`: Código estável e pronto para produção.
+- `dev`: Branch de desenvolvimento para novas funcionalidades e correções.
+- `feature/<nome>`: Branches de funcionalidades, derivadas de `dev`.
+- `bugfix/<nome>`: Branches de correções de bugs, derivadas de `dev`.
 
-## Commit Message Guidelines
+## Padrões de Mensagens de Commit
 
-Follow [Conventional Commits](https://www.conventionalcommits.org/):
+Siga o padrão [Conventional Commits](https://www.conventionalcommits.org/):
 
-Examples:
-- `feat: add new data processing module`
-- `fix: resolve division by zero error`
-- `docs: update README with installation steps`
+Exemplos:
+- `feat: adicionar novo módulo de processamento`
+- `fix: corrigir erro de divisão por zero`
+- `docs: atualizar README com instruções de instalação`
 
-## Pull Request Process
+## Processo de Pull Request
 
-1. Fork and clone the repo.
-2. Create a new branch (`feature/my-feature`).
-3. Make your changes and commit them.
-4. Push to your fork and create a PR targeting the `dev` branch.
-5. Follow the PR template and ensure:
-   - All checks pass.
-   - The code is well-documented.
-   - You’ve added or updated tests.
+1. Faça um fork e clone o repositório.
+2. Crie uma nova branch (`feature/minha-funcionalidade`).
+3. Faça suas alterações e commits.
+4. Envie para seu fork e crie um Pull Request para a branch `dev`.
+5. Preencha o template de PR e certifique-se de que:
+   - Todos os testes e verificações passaram.
+   - O código está documentado.
+   - Você adicionou ou atualizou os testes.
 
-## Coding Standards
+## Padrões de Codificação
 
-- Use `black` for consistent formatting: `black .`
-- Lint with `flake8`: `flake8 .`
-- Type checking with `mypy`: `mypy .`
-- Environment variables should be managed via `.env` and `python-dotenv`.
+- Use `black` para formatar o código: `black .`
+- Verifique com `flake8`: `flake8 .`
+- Checagem de tipos com `mypy`: `mypy .`
+- Variáveis de ambiente devem ser gerenciadas via `.env` e `python-dotenv`.
 
-## Testing
+## Testes
 
-We use `pytest` for testing. To run tests:
+Usamos `pytest` para testes. Para rodar:
 
 ```bash
 pytest
 ```
 
-Ensure:
-- Each new feature includes test coverage.
-- Use test doubles and fixtures where needed.
+Certifique-se de que:
+- Toda nova funcionalidade tem cobertura de testes.
+- Use mocks e fixtures quando necessário.
 
-## CI/CD via GitHub Actions
+## CI/CD com GitHub Actions
 
-Our workflow includes:
+Nosso fluxo inclui:
 
-- Code linting (flake8)
-- Unit testing (pytest)
-- Static type checks (mypy)
-- Automatic formatting (black)
-- Deployment scripts (if applicable)
+- Linting com `flake8`
+- Testes com `pytest`
+- Checagem de tipos com `mypy`
+- Formatação automática com `black`
+- Scripts de deploy (se aplicável)
 
-All pull requests are validated through these checks. Please ensure they pass before requesting a review.
+Todos os pull requests passam por essas verificações. Por favor, certifique-se de que estão passando antes de pedir uma revisão.
 
 ---
 
-Thank you for helping us improve!
+Obrigado por ajudar a melhorar este projeto!
