@@ -1,7 +1,7 @@
 # Guia de Commits com Conventional Commits
 
 ## 🎯 Objetivo
-Este guia define um padrão de mensagens de commit para melhorar a clareza, automatizar changelogs e facilitar a integração contínua no projeto.
+Este guia define um padrão de mensagens de commit para melhorar a clareza, automatizar changelogs e facilitar a integração contínua no projeto ServiçosPI.
 
 ---
 
