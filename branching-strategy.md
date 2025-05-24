@@ -1,7 +1,7 @@
 
-# 📘 Estratégia de Branching para Projetos com Python + Docker usando GitHub Flow
+# 📘 Estratégia de Branching para o Projeto ServiçosPI 
 
-Este guia apresenta as melhores práticas para gerenciar branches em um projeto que utiliza Python, Docker e segue o modelo GitHub Flow.
+Este guia apresenta as melhores práticas para gerenciar branches em um projeto que segue o modelo GitHub Flow.
 
 ---
 
@@ -23,8 +23,8 @@ O GitHub Flow é um fluxo de trabalho leve baseado em branches que apoia a entre
 | Padrão de Nome da Branch | Propósito |
 |--------------------------|-----------|
 | `main`                   | Código pronto para produção (sempre estável e implantável) |
-| `feature/<nome>`         | Novas funcionalidades ou melhorias |
-| `bugfix/<nome>`          | Correções de bugs ou defeitos |
+| `feat/<nome>`         | Novas funcionalidades ou melhorias |
+| `fix/<nome>`          | Correções de bugs ou defeitos |
 | `hotfix/<nome>`          | Correções urgentes diretamente na `main` |
 | `refactor/<nome>`        | Melhorias ou limpezas no código (sem novas funcionalidades) |
 | `test/<nome>`            | Testes ou experimentos |
@@ -38,7 +38,7 @@ Sempre crie a branch a partir da `main`:
 ```bash
 git checkout main
 git pull origin main
-git checkout -b feature/nome-da-funcionalidade
+git checkout -b feat/nome-da-funcionalidade
 ```
 
 ---
@@ -64,7 +64,7 @@ Mantenha sua branch sincronizada com a `main` para evitar conflitos:
 ```bash
 git checkout main
 git pull origin main
-git checkout feature/nome-da-funcionalidade
+git checkout feat/nome-da-funcionalidade
 git merge main
 ```
 
@@ -77,17 +77,6 @@ git rebase origin/main
 
 ---
 
-## 🧪 Testando com Docker Localmente
-
-Garanta que sua branch está funcionando corretamente no Docker:
-
-```bash
-docker build -t minhaapp:dev .
-docker run -it minhaapp:dev
-```
-
----
-
 ## 🚨 Quando Usar `hotfix/`
 
 Use branches `hotfix/` apenas para corrigir problemas urgentes em produção:
@@ -95,14 +84,14 @@ Use branches `hotfix/` apenas para corrigir problemas urgentes em produção:
 ```bash
 git checkout main
 git pull origin main
-git checkout -b hotfix/correção-urgente
+git checkout -b hotfix/correcao-urgente
 ```
 
 Após corrigir e testar:
 
 ```bash
 git checkout main
-git merge hotfix/correção-urgente
+git merge hotfix/correcao-urgente
 git push origin main
 ```
 
@@ -112,8 +101,8 @@ Depois, crie um PR para merge nas demais branches se necessário.
 
 ## 📁 Exemplos de Nomes de Branch
 
-- `feature/api-login`
-- `bugfix/variaveis-ambiente`
+- `feat/api-login`
+- `fix/variaveis-ambiente`
 - `refactor/limpeza-docker-compose`
 - `hotfix/ajuste-seguranca-2025-05`
 
@@ -133,16 +122,6 @@ git push origin --delete feature/nome-da-funcionalidade
 
 ---
 
-## 👥 Dicas de Colaboração
-
-- Use PRs como rascunho para obter feedback inicial.
-- Marque colegas no PR (`@usuario`).
-- Mantenha os PRs pequenos e objetivos.
-- Escreva mensagens de commit claras.
-- Documente mudanças no `CHANGELOG.md`, se aplicável.
-
----
-
 ## 🛠 Ferramentas e CI Recomendados
 
 - **Linters**: `flake8`, `pylint`, `black`
@@ -152,16 +131,4 @@ git push origin --delete feature/nome-da-funcionalidade
 
 ---
 
-## 🔚 Resumo
-
-| Tarefa                   | Boa Prática                                  |
-|--------------------------|-----------------------------------------------|
-| Criar nova branch        | A partir da `main` com nome claro (`feature/...`) |
-| Manter branch atualizada | Merge ou rebase com `main` regularmente       |
-| Antes do PR              | Testar Python e Docker, seguir checklist      |
-| Estratégia de merge      | Usar PRs e squash se necessário               |
-| Após merge               | Deletar a branch                              |
-
----
-
-Boas práticas e bons commits! 🐍🐳🚀
+Boas práticas e bons commits!
